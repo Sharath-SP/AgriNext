@@ -1,0 +1,15 @@
+2026-05-11 17:51:09.421 Did not auto detect external IP.
+Please go to https://docs.streamlit.io/ for debugging hints.
+Task exception was never retrieved
+future: <Task finished name='Task-221' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\DELL\AppData\Roaming\Python\Python310\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Roaming\Python\Python310\site-packages\tornado\websocket.py", line 1113, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Roaming\Python\Python310\site-packages\tornado\websocket.py", line 1115, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
