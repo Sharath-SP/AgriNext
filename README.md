@@ -1,27 +1,35 @@
-# 🌱 AgriNext: An AI-Based Smart Farming System
+# 🌱 AgriNext — AI-Based Smart Farming System
 
-AgriNext is an AI-powered smart farming application designed to support farmers in making better agricultural decisions. The system combines machine learning and deep learning techniques to provide **crop recommendations** based on soil and environmental conditions and **plant disease identification** from leaf images.
+AgriNext is an AI-powered smart farming system designed to assist farmers with data-driven agricultural decisions.
 
----
+The system integrates **Machine Learning** and **Deep Learning** to provide:
 
-## 📌 Overview
+- 🌾 Crop recommendations based on soil and environmental parameters
+- 🍃 Plant disease identification from leaf images
 
-Agriculture depends heavily on factors such as soil nutrients, temperature, humidity, rainfall, and plant health.
-
-AgriNext addresses these challenges through two major AI-powered modules:
-
-1. **Crop Recommendation** – recommends a suitable crop based on soil and environmental parameters.
-2. **Plant Disease Identification** – identifies plant diseases from uploaded leaf images using a CNN-based deep learning model.
-
-The application provides these capabilities through a user-friendly web interface.
+The project combines a web-based frontend with independently deployed Streamlit AI modules.
 
 ---
 
-## ✨ Key Features
+## 🚀 Live Demo
 
 ### 🌾 Crop Recommendation
+https://agrinext-crop-recommendation.streamlit.app/
 
-The system recommends suitable crops using:
+### 🍃 Plant Disease Identification
+https://agrinext-plant-disease.streamlit.app/
+
+---
+
+## 🎯 Project Overview
+
+Agricultural decisions depend on multiple factors such as soil nutrients, temperature, humidity, rainfall, soil pH, and plant health.
+
+AgriNext addresses these challenges through two AI-powered modules.
+
+### 1. 🌾 Crop Recommendation
+
+The Crop Recommendation module predicts a suitable crop using:
 
 - Nitrogen (N)
 - Phosphorus (P)
@@ -31,7 +39,7 @@ The system recommends suitable crops using:
 - Soil pH
 - Rainfall
 
-Seven classification algorithms were evaluated for the crop recommendation task:
+Several classification algorithms were evaluated during development:
 
 - Decision Tree
 - Gaussian Naive Bayes
@@ -41,13 +49,13 @@ Seven classification algorithms were evaluated for the crop recommendation task:
 - XGBoost
 - K-Nearest Neighbors (KNN)
 
-The existing project evaluation reports **Random Forest as the best-performing model**, with an accuracy of approximately 99.55%.
+The final application uses a **Random Forest classifier** for crop prediction.
 
-### 🍃 Plant Disease Identification
+### 2. 🍃 Plant Disease Identification
 
-The plant disease module uses a **Convolutional Neural Network (CNN)** to classify diseases from plant leaf images.
+The Plant Disease Identification module uses a **Convolutional Neural Network (CNN)** to classify plant leaf images.
 
-The model is trained for **38 disease classes across multiple crops**, including:
+The trained model supports **38 disease/healthy classes** across multiple crops, including:
 
 - Apple
 - Blueberry
@@ -64,48 +72,32 @@ The model is trained for **38 disease classes across multiple crops**, including
 - Strawberry
 - Tomato
 
-The model can identify both healthy plants and specific diseases within its supported classes.
-
----
-
-## 🛠️ Technologies Used
-
-| Category | Technologies |
-|---|---|
-| Programming Language | Python |
-| Web Application | Streamlit |
-| Machine Learning | Scikit-learn |
-| Deep Learning | TensorFlow / Keras |
-| Data Processing | Pandas, NumPy |
-| Image Processing | PIL / OpenCV |
-| Machine Learning Model | Random Forest |
-| Deep Learning Model | CNN |
-| Version Control | Git & GitHub |
+Users can upload a leaf image and receive a predicted disease class through the Streamlit application.
 
 ---
 
 ## 🏗️ System Architecture
 
 ```text
-                    ┌─────────────────────┐
-                    │      AgriNext       │
-                    │    Web Application  │
-                    └──────────┬──────────┘
-                               │
-                ┌──────────────┴──────────────┐
-                │                             │
-                ▼                             ▼
-       ┌─────────────────┐           ┌──────────────────┐
-       │ Crop            │           │ Plant Disease    │
-       │ Recommendation  │           │ Identification   │
-       └────────┬────────┘           └─────────┬────────┘
-                │                              │
-                ▼                              ▼
-       Soil & Environmental             Plant Leaf Image
-            Parameters                       │
-                │                            │
-                ▼                            ▼
-       Machine Learning Model             CNN Model
-                │                            │
-                ▼                            ▼
-        Recommended Crop              Disease Prediction
+                         ┌─────────────────────────┐
+                         │       AgriNext Web       │
+                         │        Interface         │
+                         └────────────┬────────────┘
+                                      │
+                    ┌─────────────────┴─────────────────┐
+                    │                                   │
+                    ▼                                   ▼
+          ┌────────────────────┐             ┌──────────────────────┐
+          │ Crop Recommendation│             │ Plant Disease        │
+          │ Streamlit App      │             │ Identification App   │
+          └──────────┬─────────┘             └──────────┬───────────┘
+                     │                                  │
+                     ▼                                  ▼
+          Soil & Environmental                  Leaf Image Upload
+               Parameters                              │
+                     │                                  │
+                     ▼                                  ▼
+          Random Forest Model                    CNN Model
+                     │                                  │
+                     ▼                                  ▼
+             Recommended Crop                    Disease Prediction
