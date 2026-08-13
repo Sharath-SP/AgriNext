@@ -80,8 +80,8 @@ Users can upload a leaf image and receive a predicted disease class through the 
 
 ```text
                          ┌─────────────────────────┐
-                         │       AgriNext Web       │
-                         │        Interface         │
+                         │       AgriNext Web      │
+                         │        Interface        │
                          └────────────┬────────────┘
                                       │
                     ┌─────────────────┴─────────────────┐
