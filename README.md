@@ -1,35 +1,42 @@
 # 🌱 AgriNext — AI-Based Smart Farming System
 
-AgriNext is an AI-powered smart farming system designed to assist farmers with data-driven agricultural decisions.
+AgriNext is an AI-powered smart farming system designed to assist farmers in making data-driven agricultural decisions.
 
-The system integrates **Machine Learning** and **Deep Learning** to provide:
+The project combines **Machine Learning, Deep Learning, and Streamlit** to provide two core AI-powered capabilities:
 
-- 🌾 Crop recommendations based on soil and environmental parameters
-- 🍃 Plant disease identification from leaf images
+- 🌾 **Crop Recommendation** — recommends a suitable crop based on soil and environmental parameters.
+- 🍃 **Plant Disease Identification** — identifies plant diseases from uploaded leaf images using a CNN-based deep learning model.
 
-The project combines a web-based frontend with independently deployed Streamlit AI modules.
+The two AI modules are independently deployed as Streamlit applications and are accessible through the AgriNext web interface.
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Applications
+
+| Module | Live Application |
+|---|---|
+| 🌾 Crop Recommendation | [Launch Crop Recommendation](https://agrinext-crop-recommendation.streamlit.app/) |
+| 🍃 Plant Disease Identification | [Launch Plant Disease Identification](https://agrinext-plant-disease.streamlit.app/) |
+
+---
+
+## 🎯 Project Objectives
+
+Agricultural decisions depend on several factors, including soil nutrients, temperature, humidity, rainfall, soil pH, and plant health.
+
+AgriNext aims to provide farmers with AI-assisted tools that can help with:
+
+- Selecting suitable crops based on environmental conditions
+- Identifying diseases from plant leaf images
+- Providing an accessible web-based interface for AI-powered agricultural assistance
+
+---
+
+## ✨ Key Features
 
 ### 🌾 Crop Recommendation
-https://agrinext-crop-recommendation.streamlit.app/
 
-### 🍃 Plant Disease Identification
-https://agrinext-plant-disease.streamlit.app/
-
----
-
-## 🎯 Project Overview
-
-Agricultural decisions depend on multiple factors such as soil nutrients, temperature, humidity, rainfall, soil pH, and plant health.
-
-AgriNext addresses these challenges through two AI-powered modules.
-
-### 1. 🌾 Crop Recommendation
-
-The Crop Recommendation module predicts a suitable crop using:
+The system predicts a suitable crop using the following parameters:
 
 - Nitrogen (N)
 - Phosphorus (P)
@@ -39,7 +46,7 @@ The Crop Recommendation module predicts a suitable crop using:
 - Soil pH
 - Rainfall
 
-Several classification algorithms were evaluated during development:
+During development, multiple machine learning algorithms were evaluated:
 
 - Decision Tree
 - Gaussian Naive Bayes
@@ -49,11 +56,11 @@ Several classification algorithms were evaluated during development:
 - XGBoost
 - K-Nearest Neighbors (KNN)
 
-The final application uses a **Random Forest classifier** for crop prediction.
+The deployed application uses a **Random Forest classifier** for crop prediction.
 
-### 2. 🍃 Plant Disease Identification
+### 🍃 Plant Disease Identification
 
-The Plant Disease Identification module uses a **Convolutional Neural Network (CNN)** to classify plant leaf images.
+The plant disease module uses a **Convolutional Neural Network (CNN)** to classify plant leaf images.
 
 The trained model supports **38 disease/healthy classes** across multiple crops, including:
 
@@ -72,7 +79,7 @@ The trained model supports **38 disease/healthy classes** across multiple crops,
 - Strawberry
 - Tomato
 
-Users can upload a leaf image and receive a predicted disease class through the Streamlit application.
+Users can upload a plant leaf image and receive a predicted disease class through the Streamlit application.
 
 ---
 
@@ -80,8 +87,8 @@ Users can upload a leaf image and receive a predicted disease class through the 
 
 ```text
                          ┌─────────────────────────┐
-                         │       AgriNext Web      │
-                         │        Interface        │
+                         │        AgriNext         │
+                         │     Web Interface       │
                          └────────────┬────────────┘
                                       │
                     ┌─────────────────┴─────────────────┐
@@ -93,11 +100,14 @@ Users can upload a leaf image and receive a predicted disease class through the 
           └──────────┬─────────┘             └──────────┬───────────┘
                      │                                  │
                      ▼                                  ▼
-          Soil & Environmental                  Leaf Image Upload
-               Parameters                              │
+          Soil & Environmental                  Plant Leaf Image
+              Parameters                              │
                      │                                  │
                      ▼                                  ▼
-          Random Forest Model                    CNN Model
+          ┌────────────────────┐             ┌──────────────────────┐
+          │ Random Forest      │             │ CNN Deep Learning    │
+          │ Classifier         │             │ Model                │
+          └──────────┬─────────┘             └──────────┬───────────┘
                      │                                  │
                      ▼                                  ▼
-             Recommended Crop                    Disease Prediction
+              Recommended Crop                  Disease Prediction
